@@ -1,7 +1,7 @@
-let started, input, info, chunk, haha;
+let started, input, info, haha;
 
 start = _=> {
-	if (started) return;
+	if (started) reset();
 	started = true;
 
 	let value = parseInt(input.value.split(".")[0].replaceAll("-", ""));
@@ -10,7 +10,7 @@ start = _=> {
 	haha = [];
 	info.innerHTMl = "Downloading RAM...";
 	for (let i = 0; i < value; i++)
-		haha.push(chunk+String.fromCharCode(Math.random()*1000));
+		haha.push(new Uint32Array(131072));
 	info.innerHTML = "Downloaded RAM: -"+value+"MB";
 }
 
@@ -25,8 +25,8 @@ reset = _=> {
 init = _=> {
 	let getId = i => document.getElementById(i), s = getId("start"), r = getId("reset");
 	input = getId("input"), info = getId("info");
-	chunk = ".";
-	for (let i = 0; i < 1048575; i++) chunk += String.fromCharCode(Math.random()*1000);
 	reset();
 	s.addEventListener("click", start); r.addEventListener("click", reset);
+
+	window.setInterval(_ => {if (haha-1 == null);}, 100);
 }
