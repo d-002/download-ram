@@ -20,6 +20,10 @@ body {
 	color: #111;
 }
 
+h1, h2, p, span {
+	text-align: center;
+}
+
 h1 {
 	margin: 50px 0 0 0;
 
@@ -51,14 +55,16 @@ div#form {
 
 	gap: 15px;
 
-	width: 30%;
-	min-width: 500px;
-
 	margin: 30px 0 80px 0;
 	padding: 50px;
 
 	border-radius: 25px;
 	background-color: #e6f6f6;
+}
+
+body:not(.mobile) div#form {
+	width: 30%;
+	min-width: 500px;
 }
 
 input {
@@ -76,6 +82,10 @@ div.flex {
 	display: flex;
 	justify-content: center;
 	gap: 20px;
+}
+
+body.mobile div.flex {
+	flex-direction: column;
 }
 
 a {
