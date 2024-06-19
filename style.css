@@ -118,9 +118,20 @@ a:hover {
 	background-color: #00b36b;
 }
 
+br {
+	content: "";
+	display: block;
+
+	width: 60%;
+	height: 0;
+
+	border-bottom: 1px solid #0003;
+}
+
 div#users {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	gap: 25px;
 
 	margin: 20px;
