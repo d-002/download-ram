@@ -52,6 +52,10 @@ p {
 	font-size: 16px;
 }
 
+p.strong {
+    font-weight: bold;
+}
+
 span {
 	font-size: 14px;
 }
