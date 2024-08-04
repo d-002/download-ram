@@ -118,7 +118,7 @@ a:hover {
 	background-color: #00b36b;
 }
 
-br {
+br.line {
 	content: "";
 	display: block;
 
