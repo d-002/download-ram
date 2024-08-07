@@ -4,15 +4,16 @@
 		<link rel="stylesheet" id="theme-style" />
 		<script>
 			// load theme style very early to avoid flickering
-			const isDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-			document.getElementById("theme-style").href = isDarkMode() ? "dark.css" : "light.css";
+			let dark = localStorage.getItem("dark-theme");
+			if (![0, 1, 2].includes(dark)) dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+			document.getElementById("theme-style").href = dark ? "dark.css" : "light.css";
 		</script>
 
 		<title>Download RAM For FREE</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<script src="packed.js?v=1.4"></script>
-		<link rel="stylesheet" href="style.css?v=1.4" />
+		<script src="packed.js?v=1.5.1"></script>
+		<link rel="stylesheet" href="style.css?v=1.5.1" />
 	</head>
 
 	<body>
