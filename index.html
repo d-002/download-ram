@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="stylesheet" id="theme-style" />
+		<script>
+			// load theme style very early to avoid flickering
+			const isDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+			document.getElementById("theme-style").href = isDarkMode() ? "dark.css" : "light.css";
+		</script>
+
 		<title>Download RAM For FREE</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<script src="packed.js?v=1.4"></script>
 		<link rel="stylesheet" href="style.css?v=1.4" />
-		<link rel="stylesheet" id="theme-style" />
 	</head>
 
 	<body>

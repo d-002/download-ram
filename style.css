@@ -17,8 +17,8 @@ html, body {
 
 body {
 	font-family: consolas;
-	background-color: #f7fcfc;
-	color: #111;
+	background-color: var(--bg1);
+	color: var(--fg1);
 }
 
 div#main {
@@ -75,7 +75,7 @@ div#form {
 	padding: 50px;
 
 	border-radius: 25px;
-	background-color: #e6f6f6;
+	background-color: var(--bg2);
 }
 
 body:not(.mobile) div#form {
@@ -87,11 +87,13 @@ input {
 	padding: 5px;
 	border-radius: 3px;
 
-	border: 2px solid #00804d;
-	background-color: #c8eaea;
+	border: 2px solid var(--col1);
+	background-color: var(--bg3);
 
 	font-size: 14px;
 	text-align: center;
+
+	color: var(--fg1);
 }
 
 div.flex {
@@ -113,15 +115,15 @@ a {
 	min-width: 200px;
 
 	border-radius: 12px;
-	background-color: #00cc7a;
+	background-color: var(--bg4);
 
 	text-align: center;
-	color: #eef;
+	color: var(--fg2);
 }
 
 a:hover {
 	border-radius: 6px;
-	background-color: #00b36b;
+	background-color: var(--bg5);
 }
 
 br.line {
@@ -131,7 +133,7 @@ br.line {
 	width: 60%;
 	height: 0;
 
-	border-bottom: 1px solid #0003;
+	border-bottom: 1px solid var(--col2);
 }
 
 div#users {
@@ -159,14 +161,14 @@ div#users>div {
 	flex-grow: 0;
 
 	border-radius: 25px;
-	background-color: #e6f6f6;
+	background-color: var(--bg2);
 }
 
 div#users img {
 	width: 80px;
 	border-radius: 50%;
 
-	box-shadow: 0 0 10px #2337;
+	box-shadow: 0 0 10px var(--col3);
 }
 
 div#users span {
