@@ -1,3 +1,35 @@
+body.light {
+	--bg1: #f7fcfc;
+	--bg2: #e6f6f6;
+	--bg3: #c8eaea;
+	--bg4: #00cc7a;
+	--bg5: #00b36b;
+
+	--fg1: #111;
+	--fg2: #eef;
+
+	--col1: #00804d;
+	--col2: #0003;
+	--col3: #2337;
+	--col4: #0002;
+}
+
+body.dark {
+	--bg1: #030808;
+	--bg2: #091919;
+	--bg3: #153737;
+	--bg4: #33ffad;
+	--bg5: #4cffb7;
+
+	--fg1: #eee;
+	--fg2: #001;
+
+	--col1: #7fffcc;
+	--col2: #fff3;
+	--col3: #0007;
+	--col4: #fff2;
+}
+
 @font-face {
 	font-family: consolas;
 	src: url("consolas.ttf");
@@ -21,7 +53,11 @@ body {
 	color: var(--fg1);
 }
 
-div#main {
+body, #form, #users>div {
+	transition: 1s background-color, 0.5s color;
+}
+
+#main {
 	width: 100%;
 	height: 100%;
 
