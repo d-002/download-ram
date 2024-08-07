@@ -10,6 +10,21 @@ def getname():
     if n < 52: return chr(39+n)+chr(71+n)
     raise ValueError
 
+def remove_spaces(word, after):
+    # remove spaces before or after a string start or end
+    # to not alter strings, but compact the rest
+    s = ''
+    if after:
+        i = len(word)-1-word[::-1].index('"')
+    else:
+        i = word.index('"')
+
+    for j, c in enumerate(word):
+        if i < j == after or c != ' ':
+            s += c
+
+    return s
+
 # /!\ doesn't handle comments in strings, ' or ` strings, var keyword,
 # local variables, used packed variable names
 
@@ -62,7 +77,10 @@ for c in data:
             word += c
         else:
             if in_string:
-                data2 += word
+                if '"' in word:
+                    data2 += remove_spaces(word, False)
+                else:
+                    data2 += word
             else:
                 data2 += word.strip() or ' '
 
@@ -76,7 +94,10 @@ for c in data:
     else:
         if prev:
             if in_string:
-                data2 += word
+                if '"' in word:
+                    data2 += remove_spaces(word, True)
+                else:
+                    data2 += word
             elif word in ('const', 'let'):
                 # compress const into let
                 word = 'let'

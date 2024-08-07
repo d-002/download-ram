@@ -98,7 +98,7 @@ span {
 	font-size: 14px;
 }
 
-div#form {
+#form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -114,7 +114,7 @@ div#form {
 	background-color: var(--bg2);
 }
 
-body:not(.mobile) div#form {
+body:not(.mobile) #form {
 	width: 30%;
 	min-width: 500px;
 }
@@ -172,7 +172,7 @@ br.line {
 	border-bottom: 1px solid var(--col2);
 }
 
-div#users {
+#users {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -183,31 +183,31 @@ div#users {
 	max-width: 900px;
 }
 
-body.mobile div#users {
+body.mobile #users {
 	max-width: 450px;
 }
 
-div#users>div {
+#users>div {
 	padding: 15px;
 	display: flex;
 	align-items: center;
 	gap: 20px;
 
-	max-width: 400px;
+	width: 400px;
 	flex-grow: 0;
 
 	border-radius: 25px;
 	background-color: var(--bg2);
 }
 
-div#users img {
+#users img {
 	width: 80px;
 	border-radius: 50%;
 
 	box-shadow: 0 0 10px var(--col3);
 }
 
-div#users span {
+#users span {
 	flex-grow: 1;
 
 	font-size: 18px;
@@ -217,7 +217,7 @@ div#users span {
 	text-wrap: balance;
 }
 
-p#margin {
+#margin {
 	color: #0000;
 }
 
