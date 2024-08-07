@@ -4,19 +4,25 @@
 		<link rel="stylesheet" id="theme-style" />
 		<script>
 			// load theme style very early to avoid flickering
-			let dark = localStorage.getItem("dark-theme");
+			let dark = parseInt(localStorage.getItem("theme"));
+			console.log(dark);
 			if (![0, 1, 2].includes(dark)) dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-			document.getElementById("theme-style").href = dark ? "dark.css" : "light.css";
+			let id = i => document.getElementById(i);
+			id("theme-style").href = dark ? "dark.css" : "light.css";
 		</script>
 
 		<title>Download RAM For FREE</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<script src="packed.js?v=1.5.1"></script>
-		<link rel="stylesheet" href="style.css?v=1.5.1" />
+		<script src="packed.js?v=1.5.2"></script>
+		<link rel="stylesheet" href="style.css?v=1.5.2" />
 	</head>
 
 	<body>
+		<div id="theme-switch">
+			<a href="javascript:switchTheme()"><img id="theme-icon"></a>
+		</div>
+
 		<div id="main">
 			<h1 id="title"> - Download free RAM - </h1>
 			<h2>WARNING: this website is legit.</h2>
@@ -27,14 +33,14 @@
 				<span>Enter amount (in MB, 1024 = 1GB)</span>
 				<input id="input" type="number" value="4096" />
 				<div class="flex">
-					<a id="start">Download RAM</a>
-					<a id="reset">Reset added RAM</a>
+					<a id="start" class="button">Download RAM</a>
+					<a id="reset" class="button">Reset added RAM</a>
 				</div>
 
 				<p id="info">Loading...</p>
 			</div>
 
-            <p>On Windows, open the Task Manager (Ctrl+Shift+Esc) to see your RAM change in real-time!</p>
+            <p>On Windows, open Task Manager to see your RAM change in real-time!</p>
 			<br class="line" />
 
 			<p class="strong">What users think of this free ram downloader:</p>
@@ -63,14 +69,14 @@
 					<img src="users/kalitsune.webp">
 					<span>"The maths ain't mathing"</span>
 				</div>
-                <div>
-                    <img src="users/winston_churchill.webp">
-                    <span>"its not a joke<br>it actually worked for me"</span>
-                </div>
-                <div>
-                    <img src="users/m1inhaber.webp">
-                    <span>"Was it necessary to ping everyone for this joke?"</span>
-                </div>
+				<div>
+					<img src="users/m1inhaber.webp">
+					<span>"Was it necessary to ping everyone for this joke?"</span>
+				</div>
+				<div>
+					<img src="users/winston_churchill.webp">
+					<span>"It's not a joke<br>It actually worked for me"</span>
+				</div>
 			</div>
 			<p id="margin">haha</p>
 		</div>

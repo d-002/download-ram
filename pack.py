@@ -2,7 +2,7 @@ with open('script.js', encoding='utf-8') as f:
     data = f.read()
 
 vars = {}
-forbidden = 'setDarkMode'.split(' ')
+forbidden = 'switchTheme'.split(' ')
 
 def getname():
     n = len(vars)
@@ -18,18 +18,26 @@ data2 = ''
 in_comment = 0 # 1: //, 2: /*
 prev = None
 for c in data:
+    add = True
     if prev == '/' and not in_comment:
+        add = False
         if c == '/':
             in_comment = 1
         elif c == '*':
             in_comment = 2
-        data2 = data2[:-1]
+        else:
+            add = True
+        if not add:
+            data2 = data2[:-1]
     elif in_comment == 1 and c == '\n':
         in_comment = 0
+        add = False
     elif in_comment == 2 and prev+c == '*/':
         in_comment = 0
         data2 = data2[:-1]
-    elif not in_comment:
+        add = False
+
+    if add and not in_comment:
         data2 += c
 
     prev = c

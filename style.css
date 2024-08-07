@@ -106,7 +106,7 @@ body.mobile div.flex {
 	flex-direction: column;
 }
 
-a {
+a.button {
 	transition: 0.15s ease-out;
 	display: block;
 	cursor: pointer;
@@ -121,7 +121,7 @@ a {
 	color: var(--fg2);
 }
 
-a:hover {
+a.button:hover {
 	border-radius: 6px;
 	background-color: var(--bg5);
 }
@@ -183,4 +183,28 @@ div#users span {
 
 p#margin {
 	color: #0000;
+}
+
+#theme-switch {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1;
+
+	margin: 20px 20px 0 0;
+}
+
+#theme-switch img {
+	transition: 0.1s background-color linear, 0.2s transform ease-out;
+
+	width: 80px;
+	height: 80px;
+
+	border-radius: 50%;
+}
+
+#theme-switch img:hover {
+	transform: scale(1.05);
+
+	background-color: var(--col4);
 }
